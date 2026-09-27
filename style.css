@@ -11,6 +11,10 @@
     --sans-serif: Barlow, sans-serif;
 }
 
+[lang='ja'] {
+    font-variant-east-asian: proportional-width;
+}
+
 h1 {
     font: 600 4rem/0.875 var(--sans-serif);
 }
@@ -79,7 +83,10 @@ td {
 
 .date strong {
     font-weight: 600;
-    margin-right: 0.1em;
+}
+
+.date strong::after {
+    content: '\a0';
 }
 
 .location {
@@ -91,11 +98,54 @@ td {
     color: #888;
 }
 
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: 62.5%;
+    margin-left: -0.5em;
+    padding-top: 0.15em;
+    gap: 0.35em 0.5em;
+}
+
+.links a {
+    display: block;
+    text-decoration: none;
+    padding: 0 0.5em;
+    color: #888;
+}
+
+.links a:any-link {
+    font-family: var(--sans-serif);
+    text-transform: uppercase;
+    padding: 0.1em 0.5em 0.2em;
+    outline: 1px solid Canvas;
+    border-radius: 0.5em;
+}
+
+.links a:any-link:hover, .links a:any-link:active, .links a:any-link:focus {
+    color: CanvasText;
+    background: Canvas;
+}
+
+.links a:any-link::after {
+    content: '\a0↗';
+    color: #888;
+}
+
+.tickets-by-dm span {
+    display: block;
+}
+
+.tickets-by-dm .bitext-separator {
+    display: none;
+}
+
 summary {
     color: #888;
     cursor: pointer;
     font: 75%/1.2 var(--sans-serif);
-    font-variant-east-asian: proportional-width;
     list-style-position: outside;
 }
 
@@ -222,6 +272,18 @@ a:link, a:visited {
     .venue::after {
         content: ' / ';
         color: #888;
+    }
+
+    .links {
+        padding-top: 0.25em;
+    }
+
+    .tickets-by-dm span {
+        display: unset;
+    }
+
+    .tickets-by-dm .bitext-separator {
+        display: unset;
     }
 
     main {
