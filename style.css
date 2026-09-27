@@ -130,7 +130,7 @@ td {
 }
 
 .links a:any-link::after {
-    content: '\a0↗';
+    content: '\a0\2197\fe0e';
     color: #888;
 }
 
