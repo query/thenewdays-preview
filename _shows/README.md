@@ -7,5 +7,6 @@ Front matter fields:
 | `venue` | Venue name. |
 | `venue_url` | (Optional) URL of the venue's Web site, Instagram, etc. |
 | `location` | Mapping with `en` and `ja` keys for the English and Japanese names, respectively, of the venue's location. |
+| `tickets_url` | (Optional) URL for ticket reservations.  If absent, "tickets by DM" is displayed instead. |
 
 Document content, if present, is added to the end of the listing as is.

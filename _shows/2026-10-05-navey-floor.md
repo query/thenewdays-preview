@@ -6,4 +6,5 @@ venue_url: 'https://navey-floor.com/'
 location:
   en: Akasaka
   ja: 赤坂
+tickets_url: 'https://tiget.net/events/521778'
 ---

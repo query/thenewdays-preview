@@ -1,7 +1,16 @@
 <tr>
-{% capture formatted_date %}{% include show/date.html date=include.show.date %}{% endcapture -%}
-<td class="date">{% include optional_link.html href=include.show.show_url content=formatted_date %}</td>
+<td class="date">{% include show/date.html date=include.show.date %}</td>
 <td class="venue">{% include optional_link.html href=include.show.venue_url content=include.show.venue %}</td>
 <td class="location">{% include bitext.html en=include.show.location.en ja=include.show.location.ja %}</td>
 <td class="extra">{{ include.show.content }}</td>
+<td class="links">
+{% if include.show.show_url -%}
+<a href="{{ include.show.show_url }}" class="details" target="_blank">{% include bitext.html en='Details' ja='詳細' %}</a>
+{%- endif %}
+{% if include.show.tickets_url -%}
+<a href="{{ include.show.tickets_url }}" class="tickets" target="_blank">{% include bitext.html en='Tickets' ja='チケット' %}</a>
+{%- else -%}
+<a class="tickets-by-dm">{% include bitext.html en='Tickets by DM' ja='DMでチケット予約' %}</a>
+{%- endif %}
+</td>
 </tr>

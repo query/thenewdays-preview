@@ -6,4 +6,5 @@ venue_url: 'http://www.cyclone1997.com/home.html'
 location:
   en: Shibuya
   ja: 渋谷
+tickets_url: 'https://livepocket.jp/e/l4m66'
 ---
