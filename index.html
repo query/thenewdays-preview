@@ -28,17 +28,17 @@
 <h2>Live</h2>
 <div id="showlist">
 <table>
-{% for show in site.data.shows limit: 2 -%}
+{% for show in site.shows limit: 2 -%}
 {% include show/show.html show=show -%}
 {% endfor -%}
 </table>
-{% if site.data.shows.size > 2 -%}
+{% if site.shows.size > 2 -%}
 <details>
 <summary>
 {% include bitext.html en='More shows…' ja='もっと先のライブ…' %}
 </summary>
 <table>
-{% for show in site.data.shows offset: 2 -%}
+{% for show in site.shows offset: 2 -%}
 {% include show/show.html show=show -%}
 {% endfor -%}
 </table>

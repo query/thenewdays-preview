@@ -1,5 +1,9 @@
+collections:
+  shows:
+
 exclude:
   - README.md
+  - '**/README.md'
 
   # Jekyll defaults, which would otherwise get overridden.
   - .sass-cache/
@@ -14,3 +18,5 @@ exclude:
   - vendor/ruby/
 
 theme: null
+
+ja_weekdays: [日, 月, 火, 水, 木, 金, 土]
