@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=EB+Garamond:ital@0;1');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900');
 
 * {
     margin: 0;
@@ -8,11 +8,12 @@
 :root {
     padding: 1.5em 3em;
     --body: light-dark(#444, #ccc);
-    --sans-serif: Barlow, sans-serif;
+    --sans-serif: 'Libre Franklin', sans-serif;
+    --wordmark: Barlow, sans-serif;
 }
 
 h1 {
-    font: 600 4rem/0.875 var(--sans-serif);
+    font: 600 4rem/0.875 var(--wordmark);
 }
 
 h1::before {
@@ -62,7 +63,7 @@ main {
     color: #fff;
     background: #f22;
     display: inline-block;
-    font: 600 75%/0.875 var(--sans-serif);
+    font: 600 75%/0.875 var(--wordmark);
     text-transform: uppercase;
     margin-left: -0.4em;
     margin-bottom: 1rem;
@@ -88,17 +89,21 @@ td {
     display: block;
 }
 
-.date::after {
-    white-space: pre;
-}
-
 .date {
     font-family: var(--sans-serif);
 }
 
 .date strong {
     font-weight: 600;
-    margin-right: 0.1em;
+}
+
+.weekday {
+    font-size: 75%;
+    text-transform: uppercase;
+}
+
+.weekday-parenthesis {
+    font-variant-east-asian: proportional-width;
 }
 
 .location {
