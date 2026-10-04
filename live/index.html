@@ -1,0 +1,81 @@
+---
+title: Live
+section: live
+---
+{%- if site.shows.size == 0 -%}
+<p>No upcoming shows.</p>
+{%- else -%}
+{%- for show in site.shows -%}
+<article class="show">
+<header class="show-header">
+<h2 class="show-date">{% include show/date.html date=show.date %}</h2>
+<div class="show-venue">{{ show.venue | escape }}</div>
+<div class="show-location">{% include bitext.html en=show.location.en ja=show.location.ja %}</div>
+{% if show.event_name -%}
+<div class="show-event-name">{{ show.event_name }}</div>
+{%- endif -%}
+</header>
+<div class="show-numbers">
+{% if show.times -%}
+<section class="show-times">
+<h3>{% include bitext.html en='Times' ja='日程' %}</h3>
+<table>
+<tr>
+<th>Open</th>
+<td>{{ show.times.open }}</td>
+</tr>
+<tr>
+<th>Start</th>
+<td>{{ show.times.start }}</td>
+</tr>
+{%- if show.times.stage -%}
+<tr>
+<th>The New Days</th>
+<td>{{ show.times.stage }}</td>
+</tr>
+{%- endif %}
+</table>
+</section>
+{%- endif -%}
+{%- if show.tickets %}
+<section class="show-tickets">
+<h3>{% include bitext.html en='Tickets' ja='チケット' %}</h3>
+<table>
+{% for type in show.tickets -%}
+<tr>
+<th>{% include bitext.html en=type.en ja=type.ja %}</th>
+<td>{{ type.price }}</td>
+</tr>
+{% endfor -%}
+</table>
+</section>
+{% endif -%}
+</div>
+{%- if show.other_artists %}
+<section class="show-other-artists">
+<h3>{% include bitext.html en='With' ja='共演' %}</h3>
+<ul>
+{% for artist in show.other_artists -%}
+<li>{{ artist }}</li>
+{%- endfor %}
+</ul>
+</section>
+{% endif -%}
+<nav class="show-links">
+<ul>
+{% if show.show_url -%}
+<li><a href="{{ show.show_url }}" rel="external" target="_blank">{% include bitext.html en='Venue show page' ja='会場の公演ページ' %}</a></li>
+{%- endif %}
+{% if show.tickets_url -%}
+<li><a href="{{ show.tickets_url }}" rel="external" target="_blank">{% include bitext.html en='Get tickets' ja='チケット予約' %}</a></li>
+{%- else -%}
+<li><a class="secondary" href="/bio/">{% include bitext.html en='Tickets by DM' ja='DMでチケット予約' %}</a></li>
+{%- endif %}
+{% if show.venue_url -%}
+<li><a href="{{ show.venue_url }}" class="secondary" rel="external" target="_blank">{% include bitext.html en='Venue home page' ja='会場のホームページ' %}</a></li>
+{%- endif %}
+</ul>
+</nav>
+</article>
+{% endfor -%}
+{%- endif -%}

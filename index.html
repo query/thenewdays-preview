@@ -1,5 +1,5 @@
 ---
-# Empty front matter to force Liquid processing.
+layout: null
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
 <title>The New Days</title>
 <meta name="viewport" content="initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 <h1>The<br>New Days</h1>
@@ -24,39 +24,29 @@
 </nav>
 
 <main>
+{% if site.shows.size > 0 -%}
+{%- assign next_show = site.shows | first -%}
 <section id="live">
 <h2>Live</h2>
 <div id="showlist">
 <table>
-{% for show in site.shows limit: 2 -%}
-{% include show/show.html show=show -%}
-{% endfor -%}
+{% include show/show.html show=next_show -%}
 </table>
-{% if site.shows.size > 2 -%}
-<details>
-<summary>
-{% include bitext.html en='More shows…' ja='もっと先のライブ…' %}
-</summary>
-<table>
-{% for show in site.shows offset: 2 -%}
-{% include show/show.html show=show -%}
-{% endfor -%}
-</table>
-</details>
-{% endif -%}
+<div id="all-shows"><a href="{{ site.baseurl | escape }}{% link live/index.html %}">{% include bitext.html en='All shows' ja='すべてのライブ' %}</a></div>
 </div>
 </section>
+{% endif -%}
 
 <section id="video">
 <h2>Videos</h2>
 <div class="half">
-{% include youtube.html v='hmXVmUYQyxE' title='Broken Pavement' aspect_ratio='1/1' -%}
-{% include youtube.html v='-vOaU3Hcq8Q' title='Silent Hearts' aspect_ratio='1/1' -%}
+{% include youtube.html v='hmXVmUYQyxE' aspect_ratio='1/1' -%}
+{% include youtube.html v='-vOaU3Hcq8Q' aspect_ratio='1/1' -%}
 </div>
-{% include youtube.html v='SpPUAmi3UXk' title='The Place I Used to Hide' aspect_ratio='16/9' -%}
-{% include youtube.html v='y1rMVJAIG8Q' title='Gone Like the Wind' aspect_ratio='16/9' -%}
-{% include youtube.html v='cqH2Ng1XA80' title='Lemonade' aspect_ratio='16/9' -%}
-{% include youtube.html v='O63T_kL6gBo' title='Backpack in the Sunset' aspect_ratio='256/135' -%}
+{% include youtube.html v='SpPUAmi3UXk' aspect_ratio='16/9' -%}
+{% include youtube.html v='y1rMVJAIG8Q' aspect_ratio='16/9' -%}
+{% include youtube.html v='cqH2Ng1XA80' aspect_ratio='16/9' -%}
+{% include youtube.html v='O63T_kL6gBo' aspect_ratio='256/135' -%}
 </section>
 
 <section id="members">

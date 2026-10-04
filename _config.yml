@@ -1,5 +1,20 @@
 collections:
   shows:
+  songs:
+    output: true
+    permalink: /:collection/:slug/
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default
+  - scope:
+      path: ''
+      type: songs
+    values:
+      layout: song
+      section: songs
 
 exclude:
   - README.md
