@@ -150,7 +150,7 @@ td {
     background: Canvas;
 }
 
-.links a[rel='external']::after {
+.links a[target='_blank']::after {
     content: '\a0\2197\fe0e';
     color: #888;
 }

@@ -285,7 +285,7 @@ main {
             color: unset;
         }
 
-        &[rel='external'] {
+        &[target='_blank'] {
             position: relative;
 
             &::after {
