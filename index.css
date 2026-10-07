@@ -163,14 +163,14 @@ td {
     display: none;
 }
 
-#all-shows {
+.view-all {
     font: 75%/1.2 var(--sans-serif);
     margin-bottom: 1.5rem;
-    display: list-item;
-    list-style-type: disclosure-closed;
+    text-align: right;
 }
 
 #video {
+    color: var(--body);
     margin: 1.5rem 0;
 }
 
@@ -215,18 +215,6 @@ a:link, a:visited {
 @media (min-width: 36em) {
     main {
         font-size: 300%;
-    }
-}
-
-@media (min-width: 48em) {
-    .half {
-        display: flex;
-        flex-direction: row;
-        gap: 0.5em;
-    }
-
-    .half iframe {
-        max-width: 23.25rem;
     }
 }
 

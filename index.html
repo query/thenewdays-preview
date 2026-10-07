@@ -32,21 +32,15 @@ layout: null
 <table>
 {% include show/show.html show=next_show -%}
 </table>
-<div id="all-shows"><a href="{{ site.baseurl | escape }}{% link live/index.html %}">{% include bitext.html en='All shows' ja='すべてのライブ' %}</a></div>
+<div class="view-all"><a href="{{ site.baseurl | escape }}{% link live/index.html %}">{% include bitext.html en='All shows' ja='すべてのライブ' %}</a></div>
 </div>
 </section>
 {% endif -%}
 
 <section id="video">
-<h2>Videos</h2>
-<div class="half">
-{% include youtube.html v='hmXVmUYQyxE' aspect_ratio='1/1' -%}
-{% include youtube.html v='-vOaU3Hcq8Q' aspect_ratio='1/1' -%}
-</div>
+<h2>Newest video</h2>
 {% include youtube.html v='SpPUAmi3UXk' aspect_ratio='16/9' -%}
-{% include youtube.html v='y1rMVJAIG8Q' aspect_ratio='16/9' -%}
-{% include youtube.html v='cqH2Ng1XA80' aspect_ratio='16/9' -%}
-{% include youtube.html v='O63T_kL6gBo' aspect_ratio='256/135' -%}
+<div class="view-all"><a href="{{ site.baseurl | escape }}{% link songs/index.html %}">{% include bitext.html en='All songs' ja='すべての曲' %}</a></div>
 </section>
 
 <section id="members">
