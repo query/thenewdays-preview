@@ -305,8 +305,10 @@ main {
 
 @media (min-width: 36em) {
     .show-numbers {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0 5%;
     }
 }
 
