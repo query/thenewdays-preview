@@ -8,6 +8,12 @@
 :root {
     font: 125%/1.5 'EB Garamond', serif;
 
+    --canvas: light-dark(#fff, #222);
+    --canvas-text: light-dark(#000, #fff);
+
+    background: var(--canvas);
+    color: var(--canvas-text);
+
     --sans-serif: 'Libre Franklin', sans-serif;
 }
 
@@ -48,7 +54,7 @@ iframe {
 }
 
 .bitext-separator {
-    color: color-mix(in srgb, Canvas 65%, CanvasText);
+    color: #888;
 }
 
 /* Base layout */
@@ -63,8 +69,8 @@ iframe {
     position: sticky;
     top: 0;
     margin: 0 0 1rem;
-    background: Canvas;
-    box-shadow: 0 -1rem 0 1rem Canvas, 0 0 0.5rem 0 #000;
+    background: var(--canvas);
+    box-shadow: 0 -1rem 0 1rem var(--canvas), 0 0 0.5rem 0 #000;
     z-index: 100;
 
     a {
@@ -95,7 +101,7 @@ iframe {
         inset: 0;
 
         &:hover, &:active, &:focus {
-            background: color-mix(in srgb, Canvas 95%, CanvasText);
+            background: light-dark(#eee, #333);
         }
     }
 }
@@ -132,12 +138,12 @@ iframe {
         }
 
         &.current::after {
-            background: CanvasText !important;
+            background: var(--canvas-text) !important;
         }
 
         &:hover, &:active, &:focus {
             &::after {
-                background: color-mix(in srgb, Canvas 75%, CanvasText);
+                background: #888;
             }
         }
     }
@@ -201,7 +207,7 @@ main {
     gap: 0 1rem;
     grid-template-columns: 4.5em 1fr;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid color-mix(in srgb, Canvas 75%, CanvasText);
+    border-bottom: 1px solid light-dark(#ddd, #444);
     line-height: 1.2;
 }
 
@@ -226,21 +232,17 @@ main {
     font-weight: bold;
     grid-row: 1;
     grid-column: 2;
-    background: Canvas;
-    color: CanvasText;
 }
 
 .show-location {
     grid-row: 2;
     grid-column: 2;
-    background: Canvas;
-    color: CanvasText;
 }
 
 .show-event-name {
     grid-column: 1 / -1;
     font-style: italic;
-    color: color-mix(in srgb, Canvas 50%, CanvasText);
+    color: #888;
     margin-top: 0.25rem;
 }
 
@@ -256,7 +258,7 @@ main {
 
         &:not(:last-child)::after {
             content: '・';
-            opacity: 0.35;
+            color: #888;
         }
     }
 }
@@ -275,12 +277,12 @@ main {
         text-decoration: none;
         border-radius: 0.5rem;
         padding: 0.25rem 0.5rem;
-        border: 1px solid CanvasText;
-        background: CanvasText;
-        color: Canvas;
+        border: 1px solid var(--canvas-text);
+        background: var(--canvas-text);
+        color: var(--canvas);
 
         &.secondary {
-            border: 1px solid color-mix(in srgb, Canvas 75%, CanvasText);
+            border: 1px solid #888;
             background: unset;
             color: unset;
         }
@@ -297,8 +299,8 @@ main {
         }
 
         &:hover, &:active, &:focus {
-            background: color-mix(in srgb, Canvas 95%, CanvasText);
-            color: CanvasText;
+            background: light-dark(#eee, #333);
+            color: var(--canvas-text);
         }
     }
 }
@@ -336,7 +338,7 @@ main {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    border: 1px solid color-mix(in srgb, Canvas 75%, CanvasText);
+    border: 1px solid light-dark(#eee, #333);
     margin-bottom: 0.5rem;
 }
 
@@ -349,7 +351,7 @@ main {
 #song-cover {
     box-sizing: border-box;
     width: 100%;
-    border: 1px solid color-mix(in srgb, Canvas 75%, CanvasText);
+    border: 1px solid light-dark(#eee, #333);
 }
 
 #song-lyrics {
