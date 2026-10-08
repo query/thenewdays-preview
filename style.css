@@ -143,7 +143,7 @@ iframe {
 
         &:hover, &:active, &:focus {
             &::after {
-                background: #888;
+                background: light-dark(#ccc, #888);
             }
         }
     }
@@ -336,9 +336,8 @@ main {
 
 .song-list-cover {
     display: block;
-    box-sizing: border-box;
     width: 100%;
-    border: 1px solid light-dark(#eee, #333);
+    outline: 1px solid light-dark(#ccc, #333);
     margin-bottom: 0.5rem;
 }
 
@@ -349,9 +348,8 @@ main {
 }
 
 #song-cover {
-    box-sizing: border-box;
     width: 100%;
-    border: 1px solid light-dark(#eee, #333);
+    outline: 1px solid light-dark(#ccc, #333);
 }
 
 #song-lyrics {
@@ -376,7 +374,6 @@ main {
     }
 
     #song-cover {
-        width: 8rem;
         grid-row: 1 / 3;
     }
 }
