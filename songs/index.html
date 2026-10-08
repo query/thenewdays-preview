@@ -6,7 +6,7 @@ section: songs
 {% for song in site.songs -%}
 <li class="song-list-item">
 <a class="song-list-link" href="{{ song.url | relative_url | escape }}">
-<img class="song-list-cover" src="{{ 'covers/' | append: song.slug | append: '.jpg' | relative_url | escape }}" alt="">
+<img class="song-list-cover" src="{{ song.url | append: 'cover.jpg' | relative_url | escape }}" alt="">
 {{ song.title | escape }}
 </a>
 </li>
