@@ -3,23 +3,30 @@ layout: default
 ---
 <div id="song-info">
 <h2 id="song-title">{{ page.title | escape }}</h2>
-<div id="song-description">
-{{ content -}}
-</div>
-<img id="song-cover" src="{{ 'covers/' | append: page.slug | append: '.jpg' | relative_url | escape }}" alt="">
+{% if page.description -%}
+<section id="song-description">
+{% if page.description.en %}<div>{{ page.description.en | markdownify }}</div>{% endif %}
+{% if page.description.ja %}<div lang="ja">{{ page.description.ja | markdownify }}</div>{% endif %}
+</section>
+{%- endif %}
+<img id="song-cover" src="cover.jpg" alt="">
 </div>
 {% if page.youtube -%}
 {% include youtube.html v=page.youtube.v aspect_ratio=page.youtube.aspect_ratio %}
 {%- endif %}
+{% if page.lyrics -%}
 <div id="song-lyrics" class="bicolumns">
+{% if page.lyrics.en -%}
 <section>
 <h3>Lyrics</h3>
-{% capture lyrics_en %}{% include_relative _lyrics_en.md %}{% endcapture -%}
-{{ lyrics_en | markdownify }}
+{{ page.lyrics.en | markdownify }}
 </section>
+{%- endif %}
+{% if page.lyrics.ja -%}
 <section lang="ja">
 <h3>歌詞の和訳</h3>
-{% capture lyrics_ja %}{% include_relative _lyrics_ja.md %}{% endcapture -%}
-{{ lyrics_ja | markdownify }}
+{{ page.lyrics.ja | markdownify }}
 </section>
+{%- endif %}
 </div>
+{%- endif %}

@@ -2,7 +2,7 @@ collections:
   shows:
   songs:
     output: true
-    permalink: /:collection/:slug/
+    permalink: /:collection/:path/
 
 defaults:
   - scope:
