@@ -4,9 +4,7 @@
 <td class="location">{% include bitext.html en=include.show.location.en ja=include.show.location.ja %}</td>
 <td class="extra">{{ include.show.content }}</td>
 <td class="links">
-{% if include.show.show_url -%}
 <a href="{{ site.baseurl | escape }}{% link live/index.html %}">{% include bitext.html en='Details' ja='詳細' %}</a>
-{%- endif %}
 {% if include.show.tickets_url -%}
 <a href="{{ include.show.tickets_url | escape }}" rel="external" target="_blank">{% include bitext.html en='Tickets' ja='チケット' %}</a>
 {%- else -%}
