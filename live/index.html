@@ -63,7 +63,7 @@ section: live
 {% if show.tickets_url -%}
 <a class="capsule" href="{{ show.tickets_url }}" rel="external" target="_blank">{% include bitext.html en='Get tickets' ja='チケット予約' %}</a>
 {%- else -%}
-<a class="capsule secondary" href="https://instagram.com/the.new.days" rel="external" target="_blank">{% include bitext.html en='Tickets by DM' ja='DMでチケット予約' %}</a>
+<a class="capsule secondary" href="{{ site.baseurl | escape }}{% link bio/index.html %}">{% include bitext.html en='Tickets by DM' ja='DMでチケット予約' %}</a>
 {%- endif %}
 </li>
 {% if show.show_url -%}
