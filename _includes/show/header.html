@@ -1,0 +1,11 @@
+<header class="show-header">
+<time class="show-date" datetime="{{ include.show.date | date: '%Y-%m-%d'}}">
+{% assign wday = include.show.date | date: '%w' | to_integer -%}
+{%- assign en = include.show.date | date: '%a' -%}
+{%- assign ja = site.ja_weekdays[wday] %}
+<strong>{{ include.show.date | date: '%-m/%-e' }}</strong>
+<span class="weekday"><span class="weekday-parenthesis">(</span>{% include bitext.html en=en ja=ja %}<span class="weekday-parenthesis">)</span></span>
+</time>
+<div class="show-venue">{{ include.show.venue | escape }}</div>
+<div class="show-location">{% include bitext.html en=include.show.location.en ja=include.show.location.ja %}</div>
+</header>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=EB+Garamond&family=Libre+Franklin:ital,wght@0,100..900;1,100..900');
 
 * {
     margin: 0;
@@ -27,7 +27,7 @@ h1::before {
     aspect-ratio: 100.87/92.5;
     margin-bottom: 1.5rem;
     background: currentcolor;
-    mask: url(phoenix.svg);
+    mask: url(lockup.svg) left / auto 100% no-repeat;
 }
 
 h2 {
@@ -150,7 +150,7 @@ td {
     background: Canvas;
 }
 
-.links a:any-link::after {
+.links a[rel='external']::after {
     content: '\a0\2197\fe0e';
     color: #888;
 }
@@ -163,23 +163,11 @@ td {
     display: none;
 }
 
-summary {
-    color: #888;
-    cursor: pointer;
+#all-shows {
     font: 75%/1.2 var(--sans-serif);
-    list-style-position: outside;
-}
-
-summary span {
-    display: block;
-}
-
-summary .bitext-separator {
-    display: none;
-}
-
-::details-content {
-    margin-top: 0.5em;
+    margin-bottom: 1.5rem;
+    display: list-item;
+    list-style-type: disclosure-closed;
 }
 
 #video {

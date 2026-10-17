@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The New Days{% if page.title %} / {{ page.title | escape }}{% endif %}</title>
+<meta name="viewport" content="initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="{{ 'style.css' | relative_url | escape }}">
+</head>
+<body>
+<header id="site-header">
+<h1 id="site-title"><a href="{{ '/' | relative_url | escape }}">The New Days</a></h1>
+<nav id="site-nav">
+<ul>
+{% for section in site.data.navigation -%}
+<li><a
+    {%- if page.section == section.id %} class="current"{% endif -%}
+    {%- assign root = section.id | append: '/index.html' -%}
+    {%- if page.path != root %} href="{{ section.id | append: '/' | relative_url | escape }}"{% endif -%}
+>{{ section.title | escape }}</a></li>
+{% endfor -%}
+</ul>
+</nav>
+</header>
+<main>
+{{ content -}}
+</main>
+</body>
+</html>
