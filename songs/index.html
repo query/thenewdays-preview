@@ -1,0 +1,15 @@
+---
+title: Songs
+section: songs
+---
+<ul id="song-list">
+{% assign songs = site.songs | sort: 'path' -%}
+{%- for song in songs -%}
+<li class="song-list-item">
+<a class="song-list-link" href="{{ song.url | relative_url | escape }}">
+<img class="song-list-cover" src="{{ song.url | append: 'cover.jpg' | relative_url | escape }}" width="300" height="300" alt="">
+{{ song.title | escape }}
+</a>
+</li>
+{%- endfor %}
+</ul>
