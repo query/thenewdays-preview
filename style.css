@@ -53,6 +53,10 @@ h3 {
     font-size: 1.25rem;
 }
 
+p {
+    margin: 1em 0;
+}
+
 a:link, a:visited {
     color: inherit;
     text-decoration-thickness: from-font;
@@ -60,6 +64,14 @@ a:link, a:visited {
 
 .bitext-separator {
     color: #888;
+}
+
+.bicolumns hr {
+    width: 50%;
+    margin: 0 auto;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: var(--figure);
 }
 
 .capsule-list {
@@ -112,6 +124,17 @@ a.capsule {
 @media (min-width: 36em) {
     :root {
         font-size: 150%;
+    }
+
+    .bicolumns {
+        font-size: 0.75rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        hr {
+            display: none;
+        }
     }
 }
 
@@ -327,5 +350,43 @@ main {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0 5%;
+    }
+}
+
+/* Bio */
+
+#bio-photo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#bio-lines {
+    display: block;
+}
+
+#bio-members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    font-family: var(--sans-serif);
+    align-items: baseline;
+
+    div {
+        border-top: 1px solid currentcolor;
+    }
+
+    dt {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 36em) {
+    #bio-members div {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: baseline;
     }
 }
