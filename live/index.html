@@ -70,7 +70,7 @@ section: live
 <li><a class="capsule" href="{{ show.show_url }}" rel="external" target="_blank">{% include bitext.html en='Venue show page' ja='会場の公演ページ' %}</a></li>
 {%- endif %}
 {% if show.venue_url -%}
-<li><a class="capsule secondary" href="{{ show.venue_url }}" rel="external" target="_blank">{% include bitext.html en='Venue home page' ja='会場のホームページ' %}</a></li>
+<li{% unless show.show_url %} class="wide"{% endunless %}><a class="capsule secondary" href="{{ show.venue_url }}" rel="external" target="_blank">{% include bitext.html en='Venue home page' ja='会場のホームページ' %}</a></li>
 {%- endif %}
 </ul>
 </nav>
