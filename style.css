@@ -622,3 +622,20 @@ dt#song-release-label {
         align-items: baseline;
     }
 }
+
+/* Error */
+
+#error {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#error-code {
+    font-size: 3rem;
+}
+
+#error-message {
+    font-family: serif;
+    font-variant-east-asian: unset;
+    margin: 0.5rem 0 1rem;
+}
